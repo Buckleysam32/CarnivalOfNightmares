@@ -4,29 +4,39 @@ using UnityEngine;
 
 public class PlayerOneJump : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private BoxCollider2D coll;
-    public float jump;
+    public float jumpForce = 5f;  // The force applied to the object when jumping
+    private bool isJumping = false;  // Flag to track if the object is currently jumping
 
-    [SerializeField] private LayerMask jumpableGround;
+    private Rigidbody rb;
 
-    void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            Jump();
         }
     }
 
-    private bool IsGrounded()
+    private void Jump()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        rb.AddForce(new Vector3(0f, jumpForce), ForceMode.Impulse);
+        isJumping = true;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the object has landed on the ground
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
+    }
+
+
+
 }

@@ -15,4 +15,14 @@ public class Beam : MonoBehaviour
     {
         
     }
+
+
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Nice");
+        }
+    }
 }
