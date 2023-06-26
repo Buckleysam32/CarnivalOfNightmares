@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Carnival Leapfest.unity
     guid: 7694bdcb608aa1d4f9909e05f2dc7379
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/GameOverOne.unity
     guid: 3a2106da79078d5468e4cb1f69d863d3
+  - enabled: 1
+    path: Assets/Scenes/GameOverTwo.unity
+    guid: 7642e7ce285a580478f742d51ee6e6fc
   m_configObjects: {}
