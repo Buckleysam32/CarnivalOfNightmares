@@ -31,7 +31,7 @@ public class PlayerOneJump : MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene("GameOverOne"); 
+            SceneManager.LoadScene("GameOverTwo"); 
         }
 
     }
