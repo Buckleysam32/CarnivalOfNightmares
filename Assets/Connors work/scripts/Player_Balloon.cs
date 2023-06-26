@@ -5,41 +5,68 @@ using UnityEngine;
 
 public class Player_Balloon : MonoBehaviour
 {
-    private float lungs = 0f;
-    private float balloon = 0f;
-    private float deflationTimer = 1f;
-    private float Inhale = 0f;
-    private float movement = 0f;
+    public float lungs = 0f;
+    public float balloon = 0f;
+    public float deflationTimer = 1f;
+    public float Inhale = 0f;
+    public float Exhale = 0f;
+    public float movement = 0f;
+    public bool finished = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        finished = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && finished == false)
         {
 
-            Inhale += 0.25f;
-            lungs += 1 + Inhale;
-            if (lungs > 10)
+            if (Inhale == 0f)
             {
-                lungs = 10;
+                Inhale += 0.75f;
+            }
+            else
+            {
+                Inhale += 1.75f;
+            }
+
+            Exhale = 0;
+            lungs += Inhale;
+
+            // check for overflow
+            if (lungs > 30)
+            {
+                lungs = 30;
             }
 
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) && finished == false)
         {
+            if (Exhale == 0f)
+            {
+                Exhale += 0.75f;
+            }
+            else
+            {
+                Exhale += 1.75f;
+            }
+
             Inhale = 0;
-            if (lungs >= 1.25)
+
+
+            if (lungs >= Exhale + 0.25)
             {
-                balloon += (0.75f);
-                lungs -= 1.25f;
+                balloon += Exhale;
+
+                lungs -= Exhale + 0.25f;
+
+                updateBalloon();
 
             }
 
@@ -48,41 +75,51 @@ public class Player_Balloon : MonoBehaviour
 
 
 
-        // Balloon deflation
+
+
+
+        // Balloon deflation overtime
         deflationTimer -= Time.deltaTime;
-        if (deflationTimer <= 0f)
+        if (deflationTimer <= 0f && finished == false)
         {
-            balloon -= 0.20f;
+
+            balloon -= 0.95f;
+
             if (balloon < 0f)
             {
                 balloon = 0f;
             }
             // Reset the timer
             deflationTimer = 1f;
+            updateBalloon();
         }
 
+        //Debug.Log(" lungs " + lungs + " balloon " + balloon + " Inhale " + Inhale + " Exhale " + Exhale + " movement " + movement + " balloonPercent " );
+    }
+
+
+    void updateBalloon()// well its messy but it works cleen this up later
+    {
         //balloon end
         // Convert balloon value to percentage
-        float balloonPercent = balloon * 100f;
-
+        //   balloonPercent = balloon * 10f;
         // Calculate movement based on percentage
-        movement = balloonPercent * 16.5f;
+        movement = balloon / 18.5f;
 
-        // Increase X position based on balloon value
-        transform.position += new Vector3(movement, 0f, 0f);
 
-        Debug.Log(" lungs " + lungs + " balloon " + balloon + " Inhale " + Inhale);
+        // move X position based on balloon value
+        transform.position = new Vector3(movement, transform.position.y, transform.position.z);
+
+
+
+
+        if (movement >= 18.5f)
+        {
+            Debug.Log("finish");
+            finished = true;
+        }
+
     }
 
-    // move the balloon hitbox to the right
-
-
-
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
 
 }
