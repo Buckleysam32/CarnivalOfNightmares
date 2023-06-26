@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Beam : MonoBehaviour
 {
+
+    public GameObject podium;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +19,18 @@ public class Beam : MonoBehaviour
         
     }
 
-
-
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Boost"))
         {
-            Debug.Log("Nice");
+            Debug.Log("Speed Increased");
+            podium.GetComponent<Spin>().rotateSpeed *= 1.2f;
+
+        }
+
+        if (collision.gameObject.CompareTag("Boost"))
+        {
+
         }
     }
 }
