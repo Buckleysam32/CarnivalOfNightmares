@@ -28,24 +28,7 @@ public class Fence : MonoBehaviour
         }
         else
         {
-            fence = Random.Range(1, 4);
-            fencetwo = Random.Range(1, 4);
-            if (fence == 1)
-            {
-                fence1 = true;
-            }
-            if (fence == 2)
-            {
-                fence2 = true;
-            }
-            if (fence == 3)
-            {
-                fence3 = true;
-            }
-            if (fence == 4)
-            {
-                fence4 = true;
-            }
+            
         }
         
     }
