@@ -15,6 +15,8 @@ public class PlayerOneJump : MonoBehaviour
 
     private Rigidbody rb;
 
+    public Animator myAnim;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,6 +27,15 @@ public class PlayerOneJump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             Jump();
+        }
+
+        if (isJumping == true)
+        {
+            myAnim.SetBool("isJumping", true);
+        }
+        if (isJumping == false)
+        {
+            myAnim.SetBool("isJumping", false);
         }
 
         healthText.text = "Health: " + health.ToString();
@@ -51,6 +62,7 @@ public class PlayerOneJump : MonoBehaviour
             isJumping = false;
         }
 
+        // Take health from the player when they collide with the beam
         if (collision.gameObject.CompareTag("Beam"))
         {
             health -= 1f;
