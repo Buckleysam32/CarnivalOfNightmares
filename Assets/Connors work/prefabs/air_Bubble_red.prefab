@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1059105794730499656}
   - component: {fileID: 932933484021911431}
   m_Layer: 0
-  m_Name: air_Bubble
+  m_Name: air_Bubble_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 493413430221873384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2135762929, guid: 241f344380b121d4598bb1a9117c777e, type: 3}
+  m_Sprite: {fileID: 925922535, guid: 7c11e71cc0eeba349b91dc21f0a857bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

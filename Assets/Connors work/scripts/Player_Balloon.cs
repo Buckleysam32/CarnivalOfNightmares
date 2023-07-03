@@ -360,7 +360,7 @@ public class Player_Balloon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (movement >= 17.5f && finished == false)
+        if (movement >= 16.5f && finished == false)
         {
             //Debug.Log("finish");
             finished = true;

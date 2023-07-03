@@ -17,9 +17,11 @@ public class balloonMid : MonoBehaviour
     void Update()
     {
         //Transform balloonEnd = GetComponent<Transform>();
-        X = balloonEnd.transform.position.x / 2;
+        X = balloonEnd.transform.position.x / 2f;
 
         transform.position = new Vector3(X, transform.position.y, transform.position.z);
+
+        X = X / 2f;
         transform.localScale = new Vector3(X, 1, 1);
     }
 }
