@@ -5,17 +5,22 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerOneJump : MonoBehaviour
+public class PlayerTwoController : MonoBehaviour
 {
     public TextMeshProUGUI healthText; // The health counter
+
     public float jumpForce = 5f;  // The force applied to the object when jumping
     private bool isJumping = false;  // Flag to track if the object is currently jumping
-    //private float beamForce = -50f; // The force applied to the object when colliding with the beam
+    private float beamForce = 50f; // The force applied to the object when colliding with the beam
     public float health = 3; // The amount of times the player can be hit by the beam
 
     private Rigidbody rb;
 
     public Animator myAnim;
+
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource hitSoundEffect;
+
 
     private void Awake()
     {
@@ -24,7 +29,7 @@ public class PlayerOneJump : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
         {
             Jump();
         }
@@ -40,16 +45,15 @@ public class PlayerOneJump : MonoBehaviour
 
         healthText.text = "Health: " + health.ToString();
 
-        if(health <= 0)
+        if (health <= 0)
         {
-            SceneManager.LoadScene("GameOverTwo"); 
+            SceneManager.LoadScene("GameOverOne");
         }
-
     }
-
 
     private void Jump()
     {
+        jumpSoundEffect.Play();
         rb.AddForce(new Vector3(0f, jumpForce), ForceMode.Impulse);
         isJumping = true;
     }
@@ -65,14 +69,9 @@ public class PlayerOneJump : MonoBehaviour
         // Take health from the player when they collide with the beam
         if (collision.gameObject.CompareTag("Beam"))
         {
+            hitSoundEffect.Play();
             health -= 1f;
         }
-
-        /*if (collision.gameObject.CompareTag("Beam"))
-        {
-            rb.AddForce(new Vector3(beamForce, 0f), ForceMode.Impulse);
-        }*/
-
 
     }
 

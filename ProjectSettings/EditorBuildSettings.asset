@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverTwo.unity
     guid: 7642e7ce285a580478f742d51ee6e6fc
+  - enabled: 1
+    path: Assets/Scenes/Carnival Leapfest 1 Player.unity
+    guid: 1a07a66f20f1b9540a4d3eebc323f799
+  - enabled: 1
+    path: Assets/Scenes/GameOverOneP.unity
+    guid: 4b5f2b8215bee36479b973beaca2a129
   m_configObjects: {}

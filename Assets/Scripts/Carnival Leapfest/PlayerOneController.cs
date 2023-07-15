@@ -5,27 +5,33 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerTwoJump : MonoBehaviour
+public class PlayerOneController : MonoBehaviour
 {
     public TextMeshProUGUI healthText; // The health counter
-
-    public float jumpForce = 5f;  // The force applied to the object when jumping
+    public TextMeshProUGUI scoreText; // The score counter
+    public float jumpForce = 6f;  // The force applied to the object when jumping
     private bool isJumping = false;  // Flag to track if the object is currently jumping
-    private float beamForce = 50f; // The force applied to the object when colliding with the beam
     public float health = 3; // The amount of times the player can be hit by the beam
-
+    public float score = 0; // The player's score for the single player mode
+    public float scoreIncrease = 100;
     private Rigidbody rb;
+
+
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource hitSoundEffect;
 
     public Animator myAnim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             Jump();
         }
@@ -40,15 +46,30 @@ public class PlayerTwoJump : MonoBehaviour
         }
 
         healthText.text = "Health: " + health.ToString();
+        scoreText.text = "Score: " + (int)score;
 
-        if (health <= 0)
+        if(health > 0)
         {
-            SceneManager.LoadScene("GameOverOne");
+            score += scoreIncrease * Time.deltaTime;
+            
         }
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("GameOverOneP"); 
+        }
+
+        
+
+        PlayerPrefs.SetFloat("score", score);
+
+
     }
+
 
     private void Jump()
     {
+        jumpSoundEffect.Play();
         rb.AddForce(new Vector3(0f, jumpForce), ForceMode.Impulse);
         isJumping = true;
     }
@@ -64,13 +85,13 @@ public class PlayerTwoJump : MonoBehaviour
         // Take health from the player when they collide with the beam
         if (collision.gameObject.CompareTag("Beam"))
         {
+            hitSoundEffect.Play();
             health -= 1f;
         }
 
-        /*if (collision.gameObject.CompareTag("Beam"))
-        {
-            rb.AddForce(new Vector3(beamForce, 0f), ForceMode.Impulse);
-        }*/
+
+
+
     }
 
 

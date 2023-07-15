@@ -24,7 +24,11 @@ public class Beam : MonoBehaviour
         if (collision.gameObject.CompareTag("Boost"))
         {
             Debug.Log("Speed Increased");
-            podium.GetComponent<Spin>().rotateSpeed *= 1.2f;
+            if(podium.GetComponent<Spin>().rotateSpeed < 200)
+            {
+                podium.GetComponent<Spin>().rotateSpeed *= 1.2f;
+            }
+            
 
         }
 
