@@ -2451,7 +2451,7 @@ MonoBehaviour:
   Player1Win: {fileID: 3878936}
   Player2Win: {fileID: 561746443}
   Player3Win: {fileID: 1851746751}
-  Tied: {fileID: 0}
+  Tied: {fileID: 361383975}
   back: {fileID: 1897813414}
 --- !u!1 &1404494839
 GameObject:
