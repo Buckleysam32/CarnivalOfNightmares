@@ -16,6 +16,7 @@ public class Player_Balloon : MonoBehaviour
     public AudioSource soundSorce;
     public AudioClip finish, breathingIn, breathingInMax, breathingOut, breathingOutMax;
     public airBubble airBuble;
+    public timer stopTimer;
 
     public int playerNUM;
 
@@ -312,10 +313,10 @@ public class Player_Balloon : MonoBehaviour
         }
 
         // Balloon deflation overtime
-        deflationTimer -= Time.deltaTime;
+
         if (deflationTimer <= 0f && finished == false)
         {
-
+        deflationTimer -= Time.deltaTime;
             movement -= 0.095f;
 
             if (movement < 0f)
@@ -360,13 +361,18 @@ public class Player_Balloon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (movement >= 16.5f && finished == false)
+        if (movement >= 15.5f && finished == false)
         {
             //Debug.Log("finish");
             finished = true;
             // sfx finish
             soundSorce.clip = finish;
             soundSorce.Play();
+
+            if (stopTimer != null)
+            {
+                stopTimer.finishedTimer = finished;
+            }
         }
         else
         {
