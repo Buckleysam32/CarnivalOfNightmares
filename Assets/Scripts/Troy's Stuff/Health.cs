@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class Health : MonoBehaviour
 {
-    public int Lives;
+    
+    public bool alive = true;
     public int timesdied;
     public Transform Spawn;
     public Transform Spawn2;
@@ -19,32 +20,14 @@ public class Health : MonoBehaviour
 
     public void Start()
     {
-        Lives = 3;
+        
         playerSpawnPoints.Add(Spawn);
         playerSpawnPoints.Add(Spawn2);
         playerSpawnPoints.Add(Spawn3);
         playerSpawnPoints.Add(Spawn4);
     }
 
-    public void OnCollisionEnter2D(Collision2D Fence)
-    {
-
-        {
-            if (Fence.gameObject.CompareTag("Fence"))
-            {
-                
-                Lives = 0;
-                
-            }
-        }
-
-        if (Lives <= 0)
-        {
-            Respawn();
-            timesdied = timesdied +1;
-            Lives = 1;
-        }
-    }
+   
 
     void Respawn()
     {
@@ -59,7 +42,13 @@ public class Health : MonoBehaviour
     {
         if (timesdied >= 4)
         {
-            Destroy(gameObject);
+            transform.position = new Vector3(10000f, 10000f, 0f);
+        }
+        if (alive == false)
+        {
+            Respawn();
+            timesdied = timesdied + 1;
+            alive = true;
         }
     }
 

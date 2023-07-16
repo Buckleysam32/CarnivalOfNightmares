@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float moveSpeed = 5f;
+    public float moveSpeed = -10f;
 
     public Rigidbody2D rb;
 
@@ -21,18 +21,29 @@ public class Movement1 : MonoBehaviour
 
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetAxisRaw("Horizontal") == 0.1 || Input.GetAxisRaw("Horizontal") == -0.1 || Input.GetAxisRaw("Vertical") == 0.1 || Input.GetAxisRaw("Vertical") == -0.1)
+        if (Input.GetKey(KeyCode.D))
         {
-            myAnim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-            myAnim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+            rb.AddForce(Vector2.right);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(Vector2.left);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(Vector2.down);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.AddForce(Vector2.up);
         }
 
     }
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+    //private void FixedUpdate()
+    //{
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+   // }
 }
