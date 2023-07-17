@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     public Transform Spawn2;
     public Transform Spawn3;
     public Transform Spawn4;
-    
+    public AudioSource Died;
 
     public List<Transform> playerSpawnPoints = new List<Transform>();
 
@@ -51,6 +51,7 @@ public class Health : MonoBehaviour
         {
             
             Respawn();
+            Died.Play();
             timesdied = timesdied + 1;
             alive = true;
         }

@@ -38,16 +38,24 @@ public class Fence : MonoBehaviour
 
         if (eletrified == true)
         {
+            gameObject.GetComponent<Renderer>().material.color = new Color(70, 122, 214);
             timerEl -= Time.deltaTime;
             eel.SetActive(true);
             timer = Random.Range(5, 15);
+            
         }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255, 255);
+        }
+
 
         if (timerEl<= 0)
         {
             eletrified= false;
             eel.SetActive(false);
             
+
         }
 
     }
