@@ -229,7 +229,6 @@ GameObject:
   - component: {fileID: 7579928617453210049}
   - component: {fileID: 40118405842218744}
   - component: {fileID: 5599038662370211482}
-  - component: {fileID: 4664548238495215296}
   - component: {fileID: 3089937888966036817}
   - component: {fileID: 3968706186612829462}
   m_Layer: 0
@@ -318,13 +317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834be05d587c99a40bb26ed22ee92326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lungs: 0
-  deflationTimer: 1
-  Inhale: 0
-  Exhale: 0
-  movement: 0
-  AirMovement: 0
-  finished: 0
   soundSorce: {fileID: 3968706186612829462}
   finish: {fileID: 8300000, guid: 54a269bc0fa74c748b83104b563183b9, type: 3}
   breathingIn: {fileID: 8300000, guid: 29d433922654c5e42be878760f87004f, type: 3}
@@ -332,6 +324,11 @@ MonoBehaviour:
   breathingOut: {fileID: 8300000, guid: 29d433922654c5e42be878760f87004f, type: 3}
   breathingOutMax: {fileID: 8300000, guid: 38d4034e149d34e45bfafaadeeeb5371, type: 3}
   airBuble: {fileID: 2202016616222454453, guid: 6e1b08da6ad3c9c4fbe8760da775adfd, type: 3}
+  otherplayer1: {fileID: 0}
+  otherplayer2: {fileID: 0}
+  stopTimer: {fileID: 0}
+  winnerText: {fileID: 0}
+  playerNUM: 0
   airBubble: {fileID: 493413430221873384, guid: 6e1b08da6ad3c9c4fbe8760da775adfd, type: 3}
 --- !u!61 &5599038662370211482
 BoxCollider2D:
@@ -378,23 +375,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4664548238495215296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732361546471251854}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0aef42195cc740468f6d756afa6002e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActions: {fileID: 0}
-  playerInput: {fileID: 0}
-  debugInputRouter: 0
-  debugAllButtons: 0
-  inputs: []
 --- !u!50 &3089937888966036817
 Rigidbody2D:
   serializedVersion: 4

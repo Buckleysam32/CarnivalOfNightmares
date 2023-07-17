@@ -7,15 +7,10 @@ public class airBubble : MonoBehaviour
     public float BubbleMovement = 0f;
     public float airAmount = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        // the air bubble movement over time
         BubbleMovement += .005f;
 
         // move X position based on balloon value
@@ -25,7 +20,7 @@ public class airBubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(" airAmount " + airAmount);
+        //when the air bubble reachs the end it will despawn
         Destroy(gameObject);
     }
 

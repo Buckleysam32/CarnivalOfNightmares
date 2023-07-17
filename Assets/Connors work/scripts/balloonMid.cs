@@ -7,12 +7,6 @@ public class balloonMid : MonoBehaviour
     public GameObject balloonEnd;
     public float X;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
