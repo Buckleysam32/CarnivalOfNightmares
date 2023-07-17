@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Health : MonoBehaviour
+public class Healthp1 : MonoBehaviour
 {
     
     public bool alive = true;
     public int timesdied;
     public Transform Spawn;
-    public Transform Spawn2;
-    public Transform Spawn3;
-    public Transform Spawn4;
     
 
     public List<Transform> playerSpawnPoints = new List<Transform>();
@@ -25,12 +20,18 @@ public class Health : MonoBehaviour
     {
         
         playerSpawnPoints.Add(Spawn);
-        playerSpawnPoints.Add(Spawn2);
-        playerSpawnPoints.Add(Spawn3);
-        playerSpawnPoints.Add(Spawn4);
+        
     }
 
-   
+    public void OnCollisionEnter2D(Collision2D Fence)
+    {
+        if (Fence.gameObject.CompareTag("Fence"))
+        {
+
+            alive = false;
+
+        }
+    }
 
     void Respawn()
     {
@@ -49,7 +50,6 @@ public class Health : MonoBehaviour
         }
         if (alive == false)
         {
-            
             Respawn();
             timesdied = timesdied + 1;
             alive = true;
