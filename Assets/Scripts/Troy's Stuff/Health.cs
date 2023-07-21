@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class Health : MonoBehaviour
 {
-    
+    public int hp = 3;
     public bool alive = true;
     public int timesdied;
     public Transform Spawn;
@@ -52,6 +52,7 @@ public class Health : MonoBehaviour
             
             Respawn();
             Died.Play();
+            hp = hp - 1;
             timesdied = timesdied + 1;
             alive = true;
         }

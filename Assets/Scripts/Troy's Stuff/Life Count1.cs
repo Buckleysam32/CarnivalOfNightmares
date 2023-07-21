@@ -9,7 +9,7 @@ public class LifeCount1 : MonoBehaviour
 {
     public TextMeshProUGUI playerOne;
     public Health health;
-    public int hp = 3;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,17 @@ public class LifeCount1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.alive == false)
+        if (health.hp == 2)
         {
-            hp = hp - 1;
-            playerOne.text = ("Player 1 Health: " + hp.ToString());
+            playerOne.text = ("Player 1 Health: " + health.hp.ToString());
+        }
+        if (health.hp == 1)
+        {
+            playerOne.text = ("Player 1 Health: " + health.hp.ToString());
+        }
+        if (health.hp == 0)
+        {
+            playerOne.text = ("Player 1 Health: " + health.hp.ToString());
         }
     }
 }

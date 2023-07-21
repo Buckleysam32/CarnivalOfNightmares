@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
+using UnityEngine;
 
-public class LifeCount2 : MonoBehaviour
+public class LifeCount3 : MonoBehaviour
 {
-    public TextMeshProUGUI playerTwo;
+    public TextMeshProUGUI playerThree;
     public Health health;
 
 
@@ -22,15 +20,15 @@ public class LifeCount2 : MonoBehaviour
     {
         if (health.hp == 2)
         {
-            playerTwo.text = ("Player 2 Health: " + health.hp.ToString());
+            playerThree.text = ("Player 3 Health: " + health.hp.ToString());
         }
         if (health.hp == 1)
         {
-            playerTwo.text = ("Player 2 Health: " + health.hp.ToString());
+            playerThree.text = ("Player 3 Health: " + health.hp.ToString());
         }
         if (health.hp == 0)
         {
-            playerTwo.text = ("Player 2 Health: " + health.hp.ToString());
+            playerThree.text = ("Player 3 Health: " + health.hp.ToString());
         }
     }
 }
