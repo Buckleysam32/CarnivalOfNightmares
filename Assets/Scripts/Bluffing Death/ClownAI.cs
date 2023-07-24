@@ -44,7 +44,6 @@ public class ClownAI : MonoBehaviour
         {
             if (player1 != null)
             {
-                //do math with them
                 if (player1bluff == 0)//rock
                 {
                     clownhandforPlayer1 = 1;
@@ -59,21 +58,84 @@ public class ClownAI : MonoBehaviour
                 }
 
                 //add in a for loop where player1successfulbluff + 1 to the code untill there is non left
-
-                if (clownhandforPlayer1 > 2)
+                for (int i = 0; i <= player1successfulbluff; i++)
                 {
-                    clownhandforPlayer1 = 0;
+                    clownhandforPlayer1 += +1;
+
+                    if (clownhandforPlayer1 > 2)
+                    {
+                        clownhandforPlayer1 = 0;
+                    }
                 }
-                //end the loop here
             }
+            else
+            {
+                Debug.Log("player 1 not found");
+            }
+
             if (player2 != null)
             {
-                //do math with them
+                if (player2bluff == 0)//rock
+                {
+                    clownhandforPlayer2 = 1;
+                }
+                if (player2bluff == 1)//PAPPER
+                {
+                    clownhandforPlayer2 = 2;
+                }
+                if (player2bluff == 2)//SCISSORS
+                {
+                    clownhandforPlayer2 = 0;
+                }
+
+                //add in a for loop where player1successfulbluff + 1 to the code untill there is non left
+                for (int i = 0; i <= player2successfulbluff; i++)
+                {
+                    clownhandforPlayer2 += +1;
+
+                    if (clownhandforPlayer2 > 2)
+                    {
+                        clownhandforPlayer2 = 0;
+                    }
+                }
             }
+            else
+            {
+                Debug.Log("player 2 not found");
+            }
+
             if (player3 != null)
             {
-                //do math with them
+                if (player3bluff == 0)//rock
+                {
+                    clownhandforPlayer3 = 1;
+                }
+                if (player3bluff == 1)//PAPPER
+                {
+                    clownhandforPlayer3 = 2;
+                }
+                if (player3bluff == 2)//SCISSORS
+                {
+                    clownhandforPlayer3 = 0;
+                }
+
+                //add in a for loop where player1successfulbluff + 1 to the code untill there is non left
+                for (int i = 0; i <= player3successfulbluff; i++)
+                {
+                    clownhandforPlayer3 += +1;
+
+                    if (clownhandforPlayer3 > 2)
+                    {
+                        clownhandforPlayer3 = 0;
+                    }
+                }
             }
+            else
+            {
+                Debug.Log("player 3 not found");
+            }
+
+
         }
         else
         {
