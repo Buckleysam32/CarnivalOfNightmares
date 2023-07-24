@@ -18,6 +18,6 @@ public class P3Score : MonoBehaviour
     void Update()
     {
         player3Score = targetsHit * 10;
-        playerThree.text = ("Player 2 Score: " + player3Score.ToString());
+        playerThree.text = ("Player 3 Score: " + player3Score.ToString());
     }
 }
