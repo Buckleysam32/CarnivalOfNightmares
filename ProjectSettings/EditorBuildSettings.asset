@@ -13,9 +13,12 @@ EditorBuildSettings:
     guid: 28f1782ab3bab284aa6267cfd5dce9c8
   - enabled: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path: Assets/Scenes/Nathan's Crouching Mini Game.unity
     guid: 5e6a247c7cbb99d4888fa59ad9f39c8e
 =======
+=======
+>>>>>>> Stashed changes
     path: Assets/Scenes/Carnival Leapfest/Carnival Leapfest.unity
     guid: 7694bdcb608aa1d4f9909e05f2dc7379
   - enabled: 1
@@ -51,5 +54,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bumper Cars/BumperCars p2.unity
     guid: bbacd72806f068a4ea5774cec3a18024
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_configObjects: {}
