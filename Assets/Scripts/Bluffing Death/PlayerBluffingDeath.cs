@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class PlayerBluffingDeath : MonoBehaviour
 {
 
     public int playerNUM = 0;
-    public bool timesUp = false;
-    public bool bluffRound = true;
-    public float roundTime = 30;
     public ClownAI ClownBrain;
-
-
+    public bool playerbluffRound = true;
+    public SpriteRenderer SpriteRenderer;
+    public Sprite RockIcon, PaperIcon, ScissorsIcon;
+    public bool unkillable;
 
     //Rock = 0
     //Paper = 1
@@ -22,228 +22,217 @@ public class PlayerBluffingDeath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timesUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (timesUp == false)
+        if (playerbluffRound == true)
         {
-            roundTime -= Time.deltaTime;
-        }
-
-        if (roundTime <= 0)
-        {
-            bluffRound = false;
-            ClownBrain.playerbluffRound = false;
-
-            // give the bluff vaules to the clown ai
-
-            roundTime = 30;
-        }
-
-
-
-        if (timesUp == false)
-        {
-            if (bluffRound == true)
+            //player 1                
+            if (playerNUM == 1)
             {
-                //player 1                
-                if (playerNUM == 1)
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.Q))
-                    {
-                        ClownBrain.player1bluff = 0;
+                    ClownBrain.player1bluff = 0;
 
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.W))
-                    {
-                        ClownBrain.player1bluff = 1;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        ClownBrain.player1bluff = 2;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = RockIcon;
+                    //play sfx 
                 }
-
-                //player 2                
-                if (playerNUM == 2)
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.W))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.R))
-                    {
-                        ClownBrain.player2bluff = 0;
+                    ClownBrain.player1bluff = 1;
 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.T))
-                    {
-                        ClownBrain.player2bluff = 1;
-
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.Y))
-                    {
-                        ClownBrain.player2bluff = 2;
-
-                    }
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = PaperIcon;
+                    //play sfx 
                 }
-
-                //player 3                
-                if (playerNUM == 3)
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.U))
-                    {
-                        ClownBrain.player3bluff = 0;
+                    ClownBrain.player1bluff = 2;
 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.I))
-                    {
-                        ClownBrain.player3bluff = 1;
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.O))
-                    {
-                        ClownBrain.player3bluff = 2;
-
-                    }
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = ScissorsIcon;
+                    //play sfx 
                 }
             }
-            else// after bluff round is over
+
+            //player 2                
+            if (playerNUM == 2)
             {
-                //player 1                  
-                if (playerNUM == 1)
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.R))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.Q))
-                    {
-                        ClownBrain.player1hand = 0;
+                    ClownBrain.player2bluff = 0;
 
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.W))
-                    {
-                        ClownBrain.player1hand = 1;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        ClownBrain.player1hand = 2;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
+                    SpriteRenderer.sprite = RockIcon;
                 }
-
-                //player 2                
-                if (playerNUM == 1)
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.T))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.R))
-                    {
-                        ClownBrain.player2hand = 0;
+                    ClownBrain.player2bluff = 1;
 
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.T))
-                    {
-                        ClownBrain.player2hand = 1;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.Y))
-                    {
-                        ClownBrain.player2hand = 2;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
+                    SpriteRenderer.sprite = PaperIcon;
                 }
-
-                //player 3               
-                if (playerNUM == 3)
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.Y))
                 {
-                    //ROCK
-                    if (Input.GetKeyDown(KeyCode.U))
-                    {
-                        ClownBrain.player3hand = 0;
+                    ClownBrain.player2bluff = 2;
 
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //PAPPER
-                    if (Input.GetKeyDown(KeyCode.I))
-                    {
-                        ClownBrain.player3hand = 1;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
-                    //SCISSORS 
-                    if (Input.GetKeyDown(KeyCode.O))
-                    {
-                        ClownBrain.player3hand = 2;
-
-                        //change sprite to selected item
-
-                        //play sfx 
-                    }
+                    SpriteRenderer.sprite = ScissorsIcon;
                 }
-
             }
-            //end of p1 controlls
 
+            //player 3                
+            if (playerNUM == 3)
+            {
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.U))
+                {
+                    ClownBrain.player3bluff = 0;
 
+                    SpriteRenderer.sprite = RockIcon;
+                }
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.I))
+                {
+                    ClownBrain.player3bluff = 1;
 
+                    SpriteRenderer.sprite = PaperIcon;
+                }
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    ClownBrain.player3bluff = 2;
 
+                    SpriteRenderer.sprite = ScissorsIcon;
+
+                }
+            }
+        }
+        else// after bluff round is over
+        {
+            //player 1                  
+            if (playerNUM == 1)
+            {
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    ClownBrain.player1hand = 0;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = RockIcon;
+                    //play sfx 
+                }
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    ClownBrain.player1hand = 1;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = PaperIcon;
+                    //play sfx 
+                }
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    ClownBrain.player1hand = 2;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = ScissorsIcon;
+                    //play sfx 
+                }
+            }
+
+            //player 2                
+            if (playerNUM == 2)
+            {
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    ClownBrain.player2hand = 0;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = RockIcon;
+                    //play sfx 
+                }
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    ClownBrain.player2hand = 1;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = PaperIcon;
+                    //play sfx 
+                }
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    ClownBrain.player2hand = 2;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = ScissorsIcon;
+                    //play sfx 
+                }
+            }
+
+            //player 3               
+            if (playerNUM == 3)
+            {
+                //ROCK
+                if (Input.GetKeyDown(KeyCode.U))
+                {
+                    ClownBrain.player3hand = 0;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = RockIcon;
+                    //play sfx 
+                }
+                //PAPPER
+                if (Input.GetKeyDown(KeyCode.I))
+                {
+                    ClownBrain.player3hand = 1;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = PaperIcon;
+                    //play sfx 
+                }
+                //SCISSORS 
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    ClownBrain.player3hand = 2;
+
+                    //change sprite to selected item
+                    SpriteRenderer.sprite = ScissorsIcon;
+                    //play sfx 
+                }
+            }
 
         }
 
-        //PLAYER 2
 
-
-
-        //PLAYER 2
-
-
-        //ADD STUFF
 
 
     }
+
+    public void roundLost()
+    {
+
+
+        //Debug.Log("player1.GetComponent<PlayerBluffingDeath>().roundLost(); was called");
+        if (unkillable == true)
+        {
+            unkillable = false;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 }
