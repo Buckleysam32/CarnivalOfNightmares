@@ -10,10 +10,17 @@ public class TargetShot : MonoBehaviour
     public P2Score p2score;
     public P3Shoot p3shoot;
     public P3Score p3score;
+    public GameObject Player1;
     // Start is called before the first frame update
     void Start()
     {
-        
+        p1score = GameObject.Find("Player 1").GetComponent<P1Score>();
+        p2score = GameObject.Find("Player 2").GetComponent<P2Score>();
+        p3score = GameObject.Find("Player 3").GetComponent<P3Score>();
+        p1shoot = GameObject.Find("Player 1").GetComponent<P1Shoot>();
+        p2shoot = GameObject.Find("Player 2").GetComponent<P2Shoot>();
+        p3shoot = GameObject.Find("Player 3").GetComponent<P3Shoot>();
+        Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
     }
 
     // Update is called once per frame
