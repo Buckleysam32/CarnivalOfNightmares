@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TSP : MonoBehaviour
+public class TSPD : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -12,11 +12,7 @@ public class TSP : MonoBehaviour
     public Transform spawn2;
     public Transform spawn3;
     public Transform spawn4;
-    public Transform spawn5;
-    public Transform spawn6;
-    public Transform spawn7;
-    public Transform spawn8;
-    public GameObject target;
+    public GameObject decoy;
     public int iPickle = 0;
 
 
@@ -28,10 +24,6 @@ public class TSP : MonoBehaviour
         targetSpawnPoints.Add(spawn2);
         targetSpawnPoints.Add(spawn3);
         targetSpawnPoints.Add(spawn4);
-        targetSpawnPoints.Add(spawn5);
-        targetSpawnPoints.Add(spawn6);
-        targetSpawnPoints.Add(spawn7);
-        targetSpawnPoints.Add(spawn8);
         spawnTimer = 5f;
      
     }
@@ -43,17 +35,17 @@ public class TSP : MonoBehaviour
         if (spawnTimer <= 0)
         {
             Spawn();
-            spawnTimer = Random.Range(7,11);
+            spawnTimer = Random.Range(9, 13);
         }
     }
     public void Spawn()
     {
 
-        for (iPickle = 0; iPickle <= 4; iPickle++)
+        for (iPickle = 0; iPickle <= 3; iPickle++)
         {
             //Instantiate(target, new Vector2(x, y), Quaternion.identity);
             Transform spawnPoint = targetSpawnPoints[Random.Range(0, targetSpawnPoints.Count)];
-            GameObject target1 = Instantiate(target, spawnPoint.position, spawnPoint.rotation);
+            GameObject target1 = Instantiate(decoy, spawnPoint.position, spawnPoint.rotation);
         }
 
     }

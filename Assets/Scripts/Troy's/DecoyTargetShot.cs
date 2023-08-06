@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetShot : MonoBehaviour
+public class DecoyTargetShot : MonoBehaviour
 {
     public P1Shoot p1shoot;
     public P1Score p1score;
@@ -35,17 +35,17 @@ public class TargetShot : MonoBehaviour
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
                 Destroy(gameObject);
-                p1score.targetsHit = p1score.targetsHit + 1;
+                p1score.targetsHit = p1score.targetsHit - 1;
             }
             if (p2shoot.p2isshooting == true && collider.gameObject.name == "Player 2")
             {
                 Destroy(gameObject);
-                p2score.targetsHit = p2score.targetsHit + 1;
+                p2score.targetsHit = p2score.targetsHit - 1;
             }
             if (p3shoot.p3isshooting == true && collider.gameObject.name == "Player 3")
             {
                 Destroy(gameObject);
-                p3score.targetsHit = p3score.targetsHit + 1;
+                p3score.targetsHit = p3score.targetsHit - 1;
             }
         }
 
