@@ -6,50 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ModeSelect.unity
-    guid: 070cdd009e20550408d80204fd9fbe61
+    path: Assets/Scenes/PP Main Menu.unity
+    guid: f0fac55b7b531e8408c6932bae1c3cb6
   - enabled: 1
-    path: Assets/Scenes/Carnival Leapfest/MainMenu.unity
-    guid: 28f1782ab3bab284aa6267cfd5dce9c8
+    path: Assets/Scenes/1 Player.unity
+    guid: d9d6d5e309e56ce4794080f1960641a3
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/Nathan's Crouching Mini Game.unity
-    guid: 5e6a247c7cbb99d4888fa59ad9f39c8e
-=======
-    path: Assets/Scenes/Carnival Leapfest/Carnival Leapfest.unity
-    guid: 7694bdcb608aa1d4f9909e05f2dc7379
-  - enabled: 1
-    path: Assets/Scenes/Carnival Leapfest/GameOverOne.unity
-    guid: 3a2106da79078d5468e4cb1f69d863d3
-  - enabled: 1
-    path: Assets/Scenes/Carnival Leapfest/GameOverTwo.unity
-    guid: 7642e7ce285a580478f742d51ee6e6fc
-  - enabled: 1
-    path: Assets/Scenes/Carnival Leapfest/Carnival Leapfest 1 Player.unity
-    guid: 1a07a66f20f1b9540a4d3eebc323f799
-  - enabled: 1
-    path: Assets/Scenes/Carnival Leapfest/GameOverOneP.unity
-    guid: 4b5f2b8215bee36479b973beaca2a129
-  - enabled: 1
-    path: Assets/Scenes/Balloon Game/MainMenuBalloon.unity
-    guid: 9de9f4b9f835fe2419bb7e44361cd679
-  - enabled: 1
-    path: Assets/Scenes/Balloon Game/balloon race 1 player.unity
-    guid: 3a39e2331bd776f4394ab1996ccb53fb
-  - enabled: 1
-    path: Assets/Scenes/Balloon Game/balloon race.unity
-    guid: 1bed1c9a610a0a645ac9a7eb484f189e
-  - enabled: 1
-    path: Assets/Scenes/Bumper Cars/Bumper Menu.unity
-    guid: b55d208535f1be4409ed44e4cb7e6f31
-  - enabled: 1
-    path: Assets/Scenes/Bumper Cars/BumperCars.unity
-    guid: 6293a18fb55a42340bc2baa49f465888
-  - enabled: 1
-    path: Assets/Scenes/Bumper Cars/BumperCarsp1.unity
-    guid: ce5671dd30a80d6499de456b613c9cb6
-  - enabled: 1
-    path: Assets/Scenes/Bumper Cars/BumperCars p2.unity
-    guid: bbacd72806f068a4ea5774cec3a18024
->>>>>>> Stashed changes
+    path: Assets/Scenes/2 Player.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
