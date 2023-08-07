@@ -8,8 +8,8 @@ public class Win : MonoBehaviour
 {
     public P1Score p1score;
     public GameObject pwin;
-    public GameObject p2win;
-    public GameObject p3win;
+    public GameObject p2wint;
+    public GameObject p3wint;
     public GameObject p1wint;
     public P2Score p2score;
     public P3Score p3score;
@@ -27,16 +27,19 @@ public class Win : MonoBehaviour
         {
             pwin.SetActive(true);
             p1wint.SetActive(true);
+            Time.timeScale = 0;
         }
         if (p2score.player2Score >= 200)
         {
-            p2win.SetActive(true);
-            p1wint.SetActive(true);
+            p2wint.SetActive(true);
+            pwin.SetActive(true);
+            Time.timeScale = 0;
         }
         if (p3score.player3Score >= 200)
         {
-            p3win.SetActive(true);
-            p1wint.SetActive(true);
+            p3wint.SetActive(true);
+            pwin.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
