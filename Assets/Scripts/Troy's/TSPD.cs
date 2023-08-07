@@ -14,6 +14,7 @@ public class TSPD : MonoBehaviour
     public Transform spawn4;
     public GameObject decoy;
     public int iPickle = 0;
+    
 
 
     public List<Transform> targetSpawnPoints = new List<Transform>();
@@ -37,10 +38,11 @@ public class TSPD : MonoBehaviour
             Spawn();
             spawnTimer = Random.Range(9, 13);
         }
+        
     }
     public void Spawn()
     {
-
+        
         for (iPickle = 0; iPickle <= 3; iPickle++)
         {
             //Instantiate(target, new Vector2(x, y), Quaternion.identity);

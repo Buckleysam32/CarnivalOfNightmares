@@ -16,9 +16,13 @@ public class TSP : MonoBehaviour
     public Transform spawn6;
     public Transform spawn7;
     public Transform spawn8;
+    public Transform spawn9;
+    public Transform spawn10;
+    public Transform spawn11;
+    public Transform spawn12;
     public GameObject target;
     public int iPickle = 0;
-
+    public int targetsspawned;
 
     public List<Transform> targetSpawnPoints = new List<Transform>();
     // Start is called before the first frame update
@@ -32,6 +36,10 @@ public class TSP : MonoBehaviour
         targetSpawnPoints.Add(spawn6);
         targetSpawnPoints.Add(spawn7);
         targetSpawnPoints.Add(spawn8);
+        targetSpawnPoints.Add(spawn9);
+        targetSpawnPoints.Add(spawn10);
+        targetSpawnPoints.Add(spawn11);
+        targetSpawnPoints.Add(spawn12);
         spawnTimer = 5f;
      
     }
@@ -51,6 +59,7 @@ public class TSP : MonoBehaviour
 
         for (iPickle = 0; iPickle <= 4; iPickle++)
         {
+            targetsspawned = targetsspawned + 1;
             //Instantiate(target, new Vector2(x, y), Quaternion.identity);
             Transform spawnPoint = targetSpawnPoints[Random.Range(0, targetSpawnPoints.Count)];
             GameObject target1 = Instantiate(target, spawnPoint.position, spawnPoint.rotation);

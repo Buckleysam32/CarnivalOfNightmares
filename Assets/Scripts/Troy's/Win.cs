@@ -8,6 +8,8 @@ public class Win : MonoBehaviour
 {
     public P1Score p1score;
     public GameObject pwin;
+    public GameObject p2win;
+    public GameObject p3win;
     public GameObject p1wint;
     public P2Score p2score;
     public P3Score p3score;
@@ -21,19 +23,19 @@ public class Win : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (p1score.player1Score == 200)
+        if (p1score.player1Score >= 200)
         {
             pwin.SetActive(true);
             p1wint.SetActive(true);
         }
-        if (p2score.player2Score == 200)
+        if (p2score.player2Score >= 200)
         {
-            pwin.SetActive(true);
+            p2win.SetActive(true);
             p1wint.SetActive(true);
         }
-        if (p3score.player3Score == 200)
+        if (p3score.player3Score >= 200)
         {
-            pwin.SetActive(true);
+            p3win.SetActive(true);
             p1wint.SetActive(true);
         }
     }

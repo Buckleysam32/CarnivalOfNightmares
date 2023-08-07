@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3186842172792430485}
   - component: {fileID: 7116265227904721563}
   - component: {fileID: 141818310028994151}
+  - component: {fileID: -2138510423671297973}
   m_Layer: 0
   m_Name: DTarget
   m_TagString: Untagged
@@ -140,3 +141,18 @@ MonoBehaviour:
   p3shoot: {fileID: 0}
   p3score: {fileID: 0}
   Player1: {fileID: 0}
+  tspd: {fileID: 0}
+--- !u!114 &-2138510423671297973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467851696757123851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2d31605c4ce7d4ea0feefc597c3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTimer: 5
+  tspd: {fileID: 0}
