@@ -157,10 +157,21 @@ MonoBehaviour:
   ClownBrain: {fileID: 1836879799}
   playerbluffRound: 1
   SpriteRenderer: {fileID: 208434569}
-  RockIcon: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  PaperIcon: {fileID: 2080140977, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  ScissorsIcon: {fileID: -1674313120, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  RockIcon: {fileID: 1492403009, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperIcon: {fileID: 326682120, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsIcon: {fileID: 698464960, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockHand: {fileID: -481746247, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperHand: {fileID: -1020240949, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsHand: {fileID: 1751971880, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockThink: {fileID: -1994551508, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperThink: {fileID: -1681700105, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsThink: {fileID: -1774774127, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  wait: {fileID: -1451414060, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   unkillable: 0
+  waiting: 0
+  frowhands: 4
+  thinkhands: 4
+  Pause: 0
 --- !u!212 &208434569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -202,7 +213,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  m_Sprite: {fileID: 1492403009, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -221,8 +232,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208434567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.75, y: 0, z: 0}
+  m_LocalScale: {x: 1.5834, y: 1.5834, z: 1.5834}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -459,10 +470,21 @@ MonoBehaviour:
   ClownBrain: {fileID: 1836879799}
   playerbluffRound: 1
   SpriteRenderer: {fileID: 1018118537}
-  RockIcon: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  PaperIcon: {fileID: 2080140977, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  ScissorsIcon: {fileID: -1674313120, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  RockIcon: {fileID: 745802394, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperIcon: {fileID: -457774740, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsIcon: {fileID: -343652160, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockHand: {fileID: 2043517907, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperHand: {fileID: 807653910, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsHand: {fileID: -1775600757, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockThink: {fileID: -1614724628, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperThink: {fileID: -193079971, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsThink: {fileID: 1706860244, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  wait: {fileID: -2078387540, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   unkillable: 0
+  waiting: 0
+  frowhands: 4
+  thinkhands: 4
+  Pause: 0
 --- !u!212 &1018118537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -504,7 +526,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  m_Sprite: {fileID: 745802394, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -523,8 +545,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018118535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.851, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.5834, y: 1.5834, z: 1.5834}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -589,7 +611,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  m_Sprite: {fileID: -1536863663, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -608,8 +630,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125963236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.093, y: 0.003, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
+  m_LocalScale: {x: 1.5834, y: 1.5834, z: 1.5834}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -631,10 +653,21 @@ MonoBehaviour:
   ClownBrain: {fileID: 1836879799}
   playerbluffRound: 1
   SpriteRenderer: {fileID: 1125963237}
-  RockIcon: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  PaperIcon: {fileID: 2080140977, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  ScissorsIcon: {fileID: -1674313120, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  RockIcon: {fileID: -1536863663, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperIcon: {fileID: -1883851561, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsIcon: {fileID: 1369891040, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockHand: {fileID: 833971860, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperHand: {fileID: -1550054916, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsHand: {fileID: -2078105857, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  RockThink: {fileID: 1006156244, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperThink: {fileID: -2145314566, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsThink: {fileID: 63558266, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  wait: {fileID: -553596874, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   unkillable: 0
+  waiting: 0
+  frowhands: 4
+  thinkhands: 4
+  Pause: 0
 --- !u!1 &1290514900
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1429838943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -738,7 +771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -644, y: 436}
+  m_AnchoredPosition: {x: -653, y: 457}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1429838944
@@ -825,7 +858,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -64.43217}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -856,7 +889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1638192091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -981,7 +1014,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -1.2484037, z: -168.37828, w: -58.6749}
+  m_margin: {x: -1.2495117, y: -1.2484037, z: -168.37828, w: -112.87019}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1054,7 +1087,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -703545067, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  m_Sprite: {fileID: -832373504, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1108,16 +1141,20 @@ MonoBehaviour:
   player2successfulbluff: 0
   player3successfulbluff: 0
   clownHandForAll: 0
-  paused: 0
+  roundNum: 1
+  halfGame: 0
+  gamerOver: 0
   timesUp: 0
   roundTime: 10
   bluffRound: 1
   roundInticator: {fileID: 1914305968}
   SpriteRenderer: {fileID: 1836879797}
-  RockIcon: {fileID: -678135225, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  PaperIcon: {fileID: 2080140977, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  ScissorsIcon: {fileID: -1674313120, guid: a260bec599438f0448e0a514f645ddce, type: 3}
-  thinking: {fileID: -703545067, guid: a260bec599438f0448e0a514f645ddce, type: 3}
+  RockIcon: {fileID: 1256961313, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  PaperIcon: {fileID: 1783262975, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  ScissorsIcon: {fileID: -395890470, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  thinking: {fileID: -832373504, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  won: {fileID: 185338258, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
+  lost: {fileID: -1410831608, guid: d26381fdabbbe5647b7dc0f8944a4fe7, type: 3}
 --- !u!1 &1914305966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,8 +1190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156.17944, y: 456.08868}
-  m_SizeDelta: {x: 512.3589, y: 59.8226}
+  m_AnchoredPosition: {x: -40.74645, y: 456}
+  m_SizeDelta: {x: 512, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914305968
 MonoBehaviour:
@@ -1176,7 +1213,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: bluff round 221
+  m_text: Game 1 Bluff Round 10 Seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1210,7 +1247,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1239,7 +1276,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -73.91217, y: 0, z: -155.40515, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

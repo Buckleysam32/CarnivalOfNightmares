@@ -25,9 +25,10 @@ public class ClownAI : MonoBehaviour
     public int player2successfulbluff = 0;
     public int player3successfulbluff = 0;
     public int clownHandForAll = 0;
-    public bool paused = false;
     public int roundNum = 1;
-    public int halfGame = 0;
+    public bool halfGame = false;
+
+    public bool gamerOver = false;
 
     public bool timesUp = false;// when the game is over
     public float roundTime = 10;
@@ -36,7 +37,7 @@ public class ClownAI : MonoBehaviour
 
 
     public SpriteRenderer SpriteRenderer;
-    public Sprite RockIcon, PaperIcon, ScissorsIcon, thinking;
+    public Sprite RockIcon, PaperIcon, ScissorsIcon, thinking, won,lost;
 
 
     //Rock = 0
@@ -53,194 +54,75 @@ public class ClownAI : MonoBehaviour
     // Update is called once per frame
     void Update()// look at this link https://youtu.be/sw7UAZNgGg8
     {
-
-
-        // check if game is over
-        if (roundNum >= 6 )
-        {
-            timesUp = true;
-            Debug.Log("players won");
-        }
-
-
-
-
-
-        if (paused == true)
-        {
-            SpriteRenderer.sprite = thinking;
-            paused = false;
-            //roundNum += 1;
-        }
-
-        if (timesUp == false && paused == false)
+        int IntTime = (int)roundTime;
+        if (timesUp == false && gamerOver == false)
         {
             roundTime -= Time.deltaTime;
-        }
 
+            if (bluffRound == true)
+            {
+                roundInticator.text = "Game " + roundNum + " Bluff Round " + IntTime + " seconds".ToString();
+            }
+            else if (bluffRound == false)
+            {
+                roundInticator.text = "Game " + roundNum + " Real Round " + IntTime + " seconds".ToString();
+            }
+            else
+            {
+                Debug.Log("error on line 70 of clown ai");
+            }
+        }
+           
         //to whole num
-        int IntTime = (int)roundTime;
 
-        if (bluffRound == true)
-        {
-            roundInticator.text = "game " + roundNum + " Bluff Round " + IntTime + " seconds".ToString();
-        }
-        else if (bluffRound == false)
-        {
-            roundInticator.text = "game " + roundNum + " Real Round " + IntTime + " seconds".ToString();
-        }
-        else
-        {
-            Debug.Log("error on line 70 of clown ai");
-        }
 
-        if (roundTime <= 0)
+        if (roundTime <= 0 && gamerOver == false)
         {
             if (bluffRound == true)
             {
+                //setup next round
                 bluffRound = false;
                 player1.playerbluffRound = false;
                 player2.playerbluffRound = false;
                 player3.playerbluffRound = false;
+
+
+                //thinking art players
+                player1.thinkhands = player1bluff;
+                player2.thinkhands = player2bluff;
+                player3.thinkhands = player3bluff;
+
             }
             else
             {
+                //setup next round
                 bluffRound = true;
-                //HAVE CLOWN CHECK RESULTS
-
-                //player 1
-                if (player1 != null)
-                {
-                    if (clownhandforPlayer1 == player1hand)
-                    {
-                        //Debug.Log("player1 tie");
-                        player1successfulbluff += 1;
-                    }
-                    else if ((clownhandforPlayer1 == 0 && player1hand == 1) || (clownhandforPlayer1 == 1 && player1hand == 2) || (clownhandforPlayer1 == 2 && player1hand == 0))
-                    {
-                        //Debug.Log("player1 won");
-                        player1successfulbluff -= 1;
-                        player1.unkillable = true;
-                        // add one turn imunity
-                    }
-                    else
-                    {
-                        //Debug.Log("player1 lost");
-                        // start a fuction that checks if the player dies or not longer are imune 
-                        player1.GetComponent<PlayerBluffingDeath>().roundLost();
-                    }
-                }
-
-                //player 2
-                if (player2 != null)
-                {
-                    if (clownhandforPlayer2 == player2hand)
-                    {
-                       // Debug.Log("player2 tie");
-                        player2successfulbluff += 1;
-                    }
-                    else if ((clownhandforPlayer2 == 0 && player2hand == 1) || (clownhandforPlayer2 == 1 && player2hand == 2) || (clownhandforPlayer2 == 2 && player2hand == 0))
-                    {
-                        //Debug.Log("player2 won");
-                        player2successfulbluff -= 1;
-                        player2.unkillable = true;
-                        // add one turn imunity
-                    }
-                    else
-                    {
-                       // Debug.Log("player2 lost");
-                        player2.GetComponent<PlayerBluffingDeath>().roundLost();
-                    }
-                }
-
-                //player 3
-                if (player3 != null)
-                {
-                    if (clownhandforPlayer3 == player3hand)
-                    {
-                        //Debug.Log("player3 tie");
-                        player3successfulbluff += 1;
-                    }
-                    else if ((clownhandforPlayer3 == 0 && player3hand == 1) || (clownhandforPlayer3 == 1 && player3hand == 2) || (clownhandforPlayer3 == 2 && player3hand == 0))
-                    {
-                       // Debug.Log("player3 won");
-                        player3successfulbluff -= 1;
-                        player3.unkillable = true;
-                        // add one turn imunity
-                    }
-                    else
-                    {
-                        //Debug.Log("player3 lost");
-                        player3.GetComponent<PlayerBluffingDeath>().roundLost();
-                    }
-                }
-
                 player1.playerbluffRound = true;
                 player2.playerbluffRound = true;
                 player3.playerbluffRound = true;
 
+                // update the bluff of the next round to be the same as the curentlly selected option
                 player1bluff = player1hand;
                 player2bluff = player2hand;
                 player3bluff = player3hand;
 
-
-
-                if (clownHandForAll == 0)
-                {
-                    SpriteRenderer.sprite = RockIcon;
-                }
-
-                if (clownHandForAll == 1)
-                {
-                    SpriteRenderer.sprite = PaperIcon;
-                }
-
-                if (clownHandForAll == 2)
-                {
-                    SpriteRenderer.sprite = ScissorsIcon;
-                }
-
-                StartCoroutine(Wait());
-
-
-
-
-
+                StartCoroutine(Wait());//wait 3 seconds then change to thinking art
             }
 
-
-            if (halfGame != 1)
+            if (halfGame != true)
             {
-                halfGame += 1;
+                halfGame = true;
                 //Debug.Log("halfgame called");
             }
             else
             {
                 roundNum += 1;
-                halfGame = 0;
+                halfGame = false;
             }
-
-
-
-
-
-
             roundTime = 10;
         }
 
-
-        //check if all players are dead
-        if (player1 == null && player2 == null && player3 == null)
-        {
-            Debug.Log("all players lost game over");
-            timesUp = true;
-        }
-
-
-
-        // do a for loop for each players input and do the math
-
-        if (bluffRound == true)// when the clown get there first bluff they will aim for a draw this is make it easy for the next round to be prodiced baced off the results
+        if (bluffRound == true && gamerOver == false)// when the clown get there first bluff they will aim for a draw this is make it easy for the next round to be prodiced baced off the results
         {
             if (player1 != null)
             {
@@ -393,14 +275,154 @@ public class ClownAI : MonoBehaviour
 
         }
 
+
+        //check if all players are dead
+        if (player1 == null && player2 == null && player3 == null && gamerOver == false)
+        {
+            roundInticator.text = "All Players Lost Game Over.".ToString();
+
+            gamerOver = true;
+            timesUp = true;
+            SpriteRenderer.sprite = won;
+        }
+
+        // five rounds till the game is over
+        if (roundNum >= 6 && gamerOver == false)
+        {
+            roundInticator.text = "Players Won".ToString();
+
+
+
+
+
+
+
+
+            SpriteRenderer.sprite = lost;
+            gamerOver = true;
+            timesUp = true;
+        }
+
+
+
     }
 
-    IEnumerator Wait()
+
+
+    IEnumerator Wait()// make this stop player input for the player script// make this stop player input for the player script// make this stop player input for the player script// make this stop player input for the player script// make this stop player input for the player script
     {
+        //pause
         timesUp = true;
+        player1.Pause = true;
+        player2.Pause = true;
+        player3.Pause = true;
+
+        //art for players hands
+        player1.frowhands = player1hand;
+        player2.frowhands = player2hand;
+        player3.frowhands = player3hand;
+
+        //art for clown hand
+        if (clownHandForAll == 0)
+        {
+            SpriteRenderer.sprite = RockIcon;
+        }
+
+        if (clownHandForAll == 1)
+        {
+            SpriteRenderer.sprite = PaperIcon;
+        }
+
+        if (clownHandForAll == 2)
+        {
+            SpriteRenderer.sprite = ScissorsIcon;
+        }
+
+        Debug.Log("start 3 sec timer");
         yield return new WaitForSeconds(3);
-        paused = true;
+        Debug.Log("end of 3 sec timer");
+
+        //HAVE CLOWN CHECK RESULTS
+
+        //player 1
+        if (player1 != null)
+        {
+            if (clownhandforPlayer1 == player1hand)
+            {
+                //Debug.Log("player1 tie");
+                player1successfulbluff += 1;
+            }
+            else if ((clownhandforPlayer1 == 0 && player1hand == 1) || (clownhandforPlayer1 == 1 && player1hand == 2) || (clownhandforPlayer1 == 2 && player1hand == 0))
+            {
+                //Debug.Log("player1 won");
+                player1successfulbluff -= 1;
+                player1.unkillable = true;
+                // add one turn imunity
+            }
+            else
+            {
+                //Debug.Log("player1 lost");
+                // start a fuction that checks if the player dies or not longer are imune 
+                player1.GetComponent<PlayerBluffingDeath>().roundLost();
+            }
+        }
+
+        //player 2
+        if (player2 != null)
+        {
+            if (clownhandforPlayer2 == player2hand)
+            {
+                // Debug.Log("player2 tie");
+                player2successfulbluff += 1;
+            }
+            else if ((clownhandforPlayer2 == 0 && player2hand == 1) || (clownhandforPlayer2 == 1 && player2hand == 2) || (clownhandforPlayer2 == 2 && player2hand == 0))
+            {
+                //Debug.Log("player2 won");
+                player2successfulbluff -= 1;
+                player2.unkillable = true;
+                // add one turn imunity
+            }
+            else
+            {
+                // Debug.Log("player2 lost");
+                player2.GetComponent<PlayerBluffingDeath>().roundLost();
+            }
+        }
+
+        //player 3
+        if (player3 != null)
+        {
+            if (clownhandforPlayer3 == player3hand)
+            {
+                //Debug.Log("player3 tie");
+                player3successfulbluff += 1;
+            }
+            else if ((clownhandforPlayer3 == 0 && player3hand == 1) || (clownhandforPlayer3 == 1 && player3hand == 2) || (clownhandforPlayer3 == 2 && player3hand == 0))
+            {
+                // Debug.Log("player3 won");
+                player3successfulbluff -= 1;
+                player3.unkillable = true;
+                // add one turn imunity
+            }
+            else
+            {
+                //Debug.Log("player3 lost");
+                player3.GetComponent<PlayerBluffingDeath>().roundLost();
+            }
+        }
+
+        //wait for next round
+        SpriteRenderer.sprite = thinking;
+
         timesUp = false;
+        player1.Pause = false;
+        player2.Pause = false;
+        player3.Pause = false;
+
+
+
+
+
 
         //roundNum += 1;
     }

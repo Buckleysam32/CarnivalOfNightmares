@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class PlayerBluffingDeath : MonoBehaviour
@@ -11,8 +12,13 @@ public class PlayerBluffingDeath : MonoBehaviour
     public ClownAI ClownBrain;
     public bool playerbluffRound = true;
     public SpriteRenderer SpriteRenderer;
-    public Sprite RockIcon, PaperIcon, ScissorsIcon;
+    public Sprite RockIcon, PaperIcon, ScissorsIcon, RockHand, PaperHand, ScissorsHand, RockThink, PaperThink, ScissorsThink, wait;
     public bool unkillable;
+    public bool waiting = false;
+    public int frowhands = 4;
+    public int thinkhands = 4;
+    public bool Pause = false;
+
 
     //Rock = 0
     //Paper = 1
@@ -24,10 +30,66 @@ public class PlayerBluffingDeath : MonoBehaviour
     {
     }
 
+
+    IEnumerator Wait()
+    {
+
+        yield return new WaitForSeconds(3);
+        SpriteRenderer.sprite = wait;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (playerbluffRound == true)
+
+
+        if (frowhands == 0)
+        {
+            SpriteRenderer.sprite = RockHand;
+            StartCoroutine(Wait());
+        }
+        else if (frowhands == 1)
+        {
+            SpriteRenderer.sprite = PaperHand;
+            StartCoroutine(Wait());
+        }
+        else if (frowhands == 2)
+        {
+            SpriteRenderer.sprite = ScissorsHand;
+            StartCoroutine(Wait());
+        }
+        else
+        {
+            //do nothing
+        }
+        frowhands = 4;
+
+
+
+        //thinking art
+        if (thinkhands == 0)
+        {
+            SpriteRenderer.sprite = RockThink;
+        }
+        else if (thinkhands == 1)
+        {
+            SpriteRenderer.sprite = PaperThink;
+        }
+        else if (thinkhands == 2)
+        {
+            SpriteRenderer.sprite = ScissorsThink;
+        }
+        else
+        {
+            //do nothing
+        }
+        thinkhands = 4;
+
+
+
+
+
+        if (playerbluffRound == true && Pause == false)
         {
             //player 1                
             if (playerNUM == 1)
@@ -114,7 +176,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                 }
             }
         }
-        else// after bluff round is over
+        else if (Pause == false)// after bluff round is over
         {
             //player 1                  
             if (playerNUM == 1)
@@ -125,7 +187,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player1hand = 0;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = RockIcon;
+                    SpriteRenderer.sprite = RockThink;
                     //play sfx 
                 }
                 //PAPPER
@@ -134,7 +196,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player1hand = 1;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = PaperIcon;
+                    SpriteRenderer.sprite = PaperThink;
                     //play sfx 
                 }
                 //SCISSORS 
@@ -143,7 +205,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player1hand = 2;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = ScissorsIcon;
+                    SpriteRenderer.sprite = ScissorsThink;
                     //play sfx 
                 }
             }
@@ -157,7 +219,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player2hand = 0;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = RockIcon;
+                    SpriteRenderer.sprite = RockThink;
                     //play sfx 
                 }
                 //PAPPER
@@ -166,7 +228,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player2hand = 1;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = PaperIcon;
+                    SpriteRenderer.sprite = PaperThink;
                     //play sfx 
                 }
                 //SCISSORS 
@@ -175,7 +237,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player2hand = 2;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = ScissorsIcon;
+                    SpriteRenderer.sprite = ScissorsThink;
                     //play sfx 
                 }
             }
@@ -189,7 +251,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player3hand = 0;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = RockIcon;
+                    SpriteRenderer.sprite = RockThink;
                     //play sfx 
                 }
                 //PAPPER
@@ -198,7 +260,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player3hand = 1;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = PaperIcon;
+                    SpriteRenderer.sprite = PaperThink;
                     //play sfx 
                 }
                 //SCISSORS 
@@ -207,7 +269,7 @@ public class PlayerBluffingDeath : MonoBehaviour
                     ClownBrain.player3hand = 2;
 
                     //change sprite to selected item
-                    SpriteRenderer.sprite = ScissorsIcon;
+                    SpriteRenderer.sprite = ScissorsThink;
                     //play sfx 
                 }
             }
@@ -230,6 +292,7 @@ public class PlayerBluffingDeath : MonoBehaviour
         }
         else
         {
+
             Destroy(gameObject);
         }
 
