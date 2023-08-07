@@ -51,7 +51,7 @@ public class TSP : MonoBehaviour
         if (spawnTimer <= 0)
         {
             Spawn();
-            spawnTimer = Random.Range(7,11);
+            spawnTimer = Random.Range(5,9);
         }
     }
     public void Spawn()

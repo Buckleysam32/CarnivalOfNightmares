@@ -10,9 +10,8 @@ public class Clown : MonoBehaviour
     public Transform spawn2;
     public Transform spawn3;
     public Transform spawn4;
-    
-    public int clowns = 1;
     public TSP tsp;
+    public bool clowns = false;
     public List<Transform> clownSpawnPoints = new List<Transform>();
     // Start is called before the first frame update
     void Start()
@@ -26,60 +25,58 @@ public class Clown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tsp.targetsspawned >= 10 && clowns == 1)
+        if (tsp.targetsspawned == 10 && clowns == false)
         {
-            
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = true;
         }
-        if (tsp.targetsspawned >= 30 && clowns == 2)
+        if (tsp.targetsspawned == 30 && clowns == true)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = false;
         }
-        if (tsp.targetsspawned >= 50 && clowns == 3)
+        if (tsp.targetsspawned == 50 && clowns == false)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = true;
         }
-        if (tsp.targetsspawned >= 60 && clowns == 4)
+        if (tsp.targetsspawned == 60 && clowns == true)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = false;
         }
-        if (tsp.targetsspawned >= 80 && clowns == 5)
+        if (tsp.targetsspawned == 80 && clowns == false)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = true;
         }
-        if (tsp.targetsspawned >= 100 && clowns == 6)
+        if (tsp.targetsspawned == 100 && clowns == true)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = false;
         }
-        if (tsp.targetsspawned >= 120 && clowns == 7)
+        if (tsp.targetsspawned == 120 && clowns == false)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = true;
         }
-        if (tsp.targetsspawned >= 140 && clowns == 8)
+        if (tsp.targetsspawned == 140 && clowns == true)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = false;
         }
-        if (tsp.targetsspawned >= 180 && clowns == 9)
+        if (tsp.targetsspawned == 180 && clowns == false)
         {
-            Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
-            GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-            clowns = clowns + 1;
+            Spawn();
+            clowns = true;
         }
+    }
+    public void Spawn()
+    {
+        Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
+        GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
+        
+
+
     }
 }

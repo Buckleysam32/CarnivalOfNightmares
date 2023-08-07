@@ -36,7 +36,7 @@ public class TSPD : MonoBehaviour
         if (spawnTimer <= 0)
         {
             Spawn();
-            spawnTimer = Random.Range(9, 13);
+            spawnTimer = Random.Range(4, 10);
         }
         
     }

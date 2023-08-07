@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 382392705196288763}
   - component: {fileID: 8913876465795252756}
+  - component: {fileID: -8521716762550026866}
+  - component: {fileID: 4739677437011807137}
+  - component: {fileID: 2985836986394791890}
   m_Layer: 0
   m_Name: Clown
   m_TagString: Untagged
@@ -25,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018914635425043356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7413278, y: 1.6606729, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.7018323, y: 1.3577847, z: 0}
+  m_LocalScale: {x: 4.2723, y: 4.2723, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8913876465795252756
 SpriteRenderer:
@@ -73,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 22d087b516ef241468ea85de2cb358b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c922d17d5d1669f4c860fc531173ac61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +87,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &-8521716762550026866
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018914635425043356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025355032, y: 0.08169948}
+  serializedVersion: 2
+  m_Radius: 0.21858007
+--- !u!114 &4739677437011807137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018914635425043356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea1974d7995d8641a706ce65f2325c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1shoot: {fileID: 0}
+  p1score: {fileID: 0}
+  p2shoot: {fileID: 0}
+  p2score: {fileID: 0}
+  p3shoot: {fileID: 0}
+  p3score: {fileID: 0}
+  Player1: {fileID: 0}
+  tspd: {fileID: 0}
+--- !u!114 &2985836986394791890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018914635425043356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80113c6447451f447a10019af9082635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
