@@ -11,6 +11,7 @@ public class PlayerDeath : MonoBehaviour
 
     public TextMeshProUGUI winnerDisplay;
 
+
     private void Start()
     {
         gameOverPrefab.SetActive(false);

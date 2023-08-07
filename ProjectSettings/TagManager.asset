@@ -8,6 +8,7 @@ TagManager:
   - DeathCollider
   - PlayerOne
   - PlayerTwo
+  - EnemyDeath
   layers:
   - Default
   - TransparentFX

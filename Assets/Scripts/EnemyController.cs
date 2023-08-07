@@ -44,6 +44,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyDeath"))
+        {
+            GameObject.Destroy(gameObject);
+        }
+    }
+
     void StopPush()
     {
         isPushing = false;
