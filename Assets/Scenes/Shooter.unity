@@ -1557,8 +1557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1score: {fileID: 2028490036}
   pwin: {fileID: 684333834}
-  p2win: {fileID: 402167767}
-  p3win: {fileID: 1633345507}
+  p2wint: {fileID: 402167767}
+  p3wint: {fileID: 1633345507}
   p1wint: {fileID: 584225365}
   p2score: {fileID: 1581638872}
   p3score: {fileID: 1933459075}
