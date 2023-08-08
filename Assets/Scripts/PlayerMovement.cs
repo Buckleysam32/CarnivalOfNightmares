@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator myAnimator;
+
     public float moveSpeed = 5f; // The speed of the player's movement
 
     private Rigidbody2D rb;
@@ -11,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = 0f;
 
         // Move player up when W is pressed
-        if(gameObject.tag == "PlayerOne")
+        if (gameObject.tag == "PlayerOne")
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -67,11 +70,25 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //Animation
+        if (moveHorizontal != 0f) // Check if the player is moving horizontally (left or right)
+        {
+            myAnimator.SetBool("IsWalking", true);
+            myAnimator.SetBool("IsFacingRight", moveHorizontal > 0f); // Set "IsFacingRight" to true if moving right, false otherwise
+        }
+        else
+        {
+            myAnimator.SetBool("IsWalking", false);
+        }
+
+
         //Calculate the movement direction
         Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized;
 
         //Move the player
         transform.Translate(movement * moveSpeed * Time.deltaTime);
+
+
 
     }
 }
