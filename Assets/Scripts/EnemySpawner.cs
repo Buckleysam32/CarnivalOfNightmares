@@ -7,6 +7,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float minSpawnRate = 0.5f;
     [SerializeField] private float maxSpawnRate = 2.0f;
 
+    [SerializeField] private float spawnRateIncreaseTime = 5f;
+    [SerializeField] private float spawnRateIncreaseAmount = 0.1f;
+
     [SerializeField] private GameObject enemyPrefab;
 
     [SerializeField] private bool canSpawn = true;
@@ -15,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Spawner());
+
     }
 
     private IEnumerator Spawner()
@@ -25,8 +29,12 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
 
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            minSpawnRate -= spawnRateIncreaseAmount;
+            maxSpawnRate -= spawnRateIncreaseAmount;
+
         }
     }
+
 
 
 }

@@ -10,19 +10,31 @@ public class EnemyController : MonoBehaviour
 
     public float pushDuration = 0.2f;
 
+    public float destroyDelay = 1f;
+
     private bool isPushing = true;
+
+    private Animator enemyAnim;
+
+    private SpriteRenderer spriteRenderer;
+
+    private Rigidbody2D rb;
 
     private void Start()
     {
         int enemyLayer = gameObject.layer;
         int ignoreLayer = LayerMask.NameToLayer("EnemyIgnoreLayer");
         Physics2D.IgnoreLayerCollision(enemyLayer, ignoreLayer, true);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        enemyAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        AdjustSortingLayer();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,12 +60,25 @@ public class EnemyController : MonoBehaviour
     {
         if (other.CompareTag("EnemyDeath"))
         {
-            GameObject.Destroy(gameObject);
+            rb.gravityScale = 1;
+            rb.constraints = RigidbodyConstraints2D.None;
+            enemyAnim.SetBool("IsDying", true);
+            Invoke(nameof(DestroyObject), destroyDelay);
         }
+    }
+
+    void DestroyDelayed()
+    {
+        Destroy(gameObject);
     }
 
     void StopPush()
     {
         isPushing = false;
+    }
+
+    private void AdjustSortingLayer()
+    {
+        spriteRenderer.sortingOrder = (int)(transform.position.y * -32);
     }
 }

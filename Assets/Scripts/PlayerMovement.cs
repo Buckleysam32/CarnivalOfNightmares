@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -88,7 +91,13 @@ public class PlayerMovement : MonoBehaviour
         //Move the player
         transform.Translate(movement * moveSpeed * Time.deltaTime);
 
+        AdjustSortingLayer();
+
+    }
 
 
+    private void AdjustSortingLayer()
+    {
+        spriteRenderer.sortingOrder = (int)(transform.position.y * -32);
     }
 }

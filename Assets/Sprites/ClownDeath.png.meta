@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec1e313697542e24ba703a3e6e5923cc
+guid: 28723ff6fccb5464cac812570a7a62a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerOneLeft_0
+      name: ClownDeath_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,20 +115,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.46944445, y: 0.055555504}
+      pivot: {x: 0.5420168, y: 0.1008404}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5df6cba1673ae054ba8d7d664878f950
-      internalID: -1707007212
+      spriteID: 9cfdd46e080d31a45808a7b0a43a131d
+      internalID: 1405880430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerOneLeft_1
+      name: ClownDeath_1
       rect:
         serializedVersion: 2
         x: 16
@@ -136,14 +136,98 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.49305558, y: 0.04722217}
+      pivot: {x: 0.552521, y: 0.111344606}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 392c32acc96ef34419f59c1bd905eebb
-      internalID: 376206075
+      spriteID: ece76b00eac356447b0afa20db31ede5
+      internalID: -1740406210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClownDeath_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.53851557, y: 0.1008404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11a05f6c48c5524786e76f2abf410f5
+      internalID: -1066713334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClownDeath_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5525212, y: 0.1008404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4147bca726aa10b4d9ea40e072700357
+      internalID: 1236404656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClownDeath_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5035014, y: 0.114846006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2253ab30fa1ce4aa86a3e76809bebe
+      internalID: -657950727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClownDeath_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5735297, y: 0.090336196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71936c917fa6084389d9ef419f532fb
+      internalID: 807521108
       vertices: []
       indices: 
       edges: []
@@ -159,8 +243,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerOneLeft_0: -1707007212
-      playerOneLeft_1: 376206075
+      ClownDeath_0: 1405880430
+      ClownDeath_1: -1740406210
+      ClownDeath_2: -1066713334
+      ClownDeath_3: 1236404656
+      ClownDeath_4: -657950727
+      ClownDeath_5: 807521108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
