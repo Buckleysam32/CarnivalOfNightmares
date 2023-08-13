@@ -313,6 +313,9 @@ MonoBehaviour:
   player1: {fileID: 2028490028}
   player2: {fileID: 1581638867}
   player3: {fileID: 1933459070}
+  v1: 0
+  v2: 0
+  v3: 0
 --- !u!61 &279836920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -445,8 +448,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279836918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.68, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 10.0752, z: 1}
+  m_LocalPosition: {x: -10.11, y: -0.0121, z: 0}
+  m_LocalScale: {x: 1, y: 10.199125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1334,6 +1337,9 @@ MonoBehaviour:
   player1: {fileID: 2028490028}
   player2: {fileID: 1581638867}
   player3: {fileID: 1933459070}
+  v1: 0
+  v2: 0
+  v3: 0
 --- !u!61 &1257024256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1774,8 +1780,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323965388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.67, y: -0.05, z: 0}
-  m_LocalScale: {x: 1, y: 10.0752, z: 1}
+  m_LocalPosition: {x: 10.12, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 10.325065, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1797,6 +1803,9 @@ MonoBehaviour:
   player1: {fileID: 2028490028}
   player2: {fileID: 1581638867}
   player3: {fileID: 1933459070}
+  v1: 0
+  v2: 0
+  v3: 0
 --- !u!1 &1352064993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,7 +2200,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1581638870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2286,6 +2295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ec98598403d30408f8f7d4f0ce4f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walls1: {fileID: 1323965393}
+  walls2: {fileID: 279836919}
+  walls3: {fileID: 1257024255}
+  walls4: {fileID: 1967821915}
+  rb: {fileID: 1581638869}
   p2isshooting: 0
 --- !u!58 &1581638874
 CircleCollider2D:
@@ -2778,7 +2792,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1933459074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2820,6 +2834,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f5366a98247834c93f7d700a5a935c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walls1: {fileID: 1323965393}
+  walls2: {fileID: 279836919}
+  walls3: {fileID: 1257024255}
+  walls4: {fileID: 1967821915}
+  rb: {fileID: 1933459073}
   p3isshooting: 0
 --- !u!58 &1933459077
 CircleCollider2D:
@@ -2892,6 +2911,9 @@ MonoBehaviour:
   player1: {fileID: 2028490028}
   player2: {fileID: 1581638867}
   player3: {fileID: 1933459070}
+  v1: 0
+  v2: 0
+  v3: 0
 --- !u!61 &1967821916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3141,7 +3163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2028490031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3235,6 +3257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c583181510928de43a12cab87c8efe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walls1: {fileID: 1323965393}
+  walls2: {fileID: 279836919}
+  walls3: {fileID: 1257024255}
+  walls4: {fileID: 1967821915}
+  rb: {fileID: 2028490030}
   p1isshooting: 0
 --- !u!58 &2028490035
 CircleCollider2D:
