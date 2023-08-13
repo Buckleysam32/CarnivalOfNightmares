@@ -37,7 +37,7 @@ public class ClownAI : MonoBehaviour
 
 
     public SpriteRenderer SpriteRenderer;
-    public Sprite RockIcon, PaperIcon, ScissorsIcon, thinking, won,lost;
+    public Sprite RockIcon, PaperIcon, ScissorsIcon, thinking, won, lost;
 
 
     //Rock = 0
@@ -72,7 +72,7 @@ public class ClownAI : MonoBehaviour
                 Debug.Log("error on line 70 of clown ai");
             }
         }
-           
+
         //to whole num
 
 
@@ -235,7 +235,7 @@ public class ClownAI : MonoBehaviour
             //010
             //001
 
-            if (player1 != null && player2 != null && player3 != null)
+            if (player1 != null && player2 != null && player3 != null)// fix the fuction calling code not calling for all pla
             {
                 bestChoice(new int[] { clownhandforPlayer1, clownhandforPlayer2, clownhandforPlayer3 });
             }
@@ -427,22 +427,34 @@ public class ClownAI : MonoBehaviour
         //roundNum += 1;
     }
 
-    void bestChoice(int[] numbers)
+    void bestChoice(int[] clownhandforPlayer)// code fix may or may not be better then old code check later
     {
-        Dictionary<int, int> bestChoice = new Dictionary<int, int>();
-        foreach (int number in numbers)
+
+        Dictionary<int, int> bestChoice = new Dictionary<int, int>();// dont forget to get THAT usb you forgot... you dumb dumb.
+
+        foreach (int BluffNumber in clownhandforPlayer)
         {
-            if (bestChoice.ContainsKey(number))
+            if (bestChoice.ContainsKey(BluffNumber))
             {
-                bestChoice[number]++;
+                bestChoice[BluffNumber]++;
             }
             else
             {
-                bestChoice[number] = 1;
+                bestChoice[BluffNumber] = 1;
             }
         }
         int maxCount = bestChoice.Values.Max();
-        clownHandForAll = bestChoice.Where(x => x.Value == maxCount).OrderByDescending(x => x.Key).First().Key;
+        clownHandForAll = bestChoice.FirstOrDefault(x => x.Value == maxCount).Key;
+        Debug.Log("clownhandforall is" + clownHandForAll);
+
+
+
     }
+
+
+
+
+
+
 
 }
