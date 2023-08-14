@@ -11,6 +11,7 @@ public class Win : MonoBehaviour
     public GameObject p2wint;
     public GameObject p3wint;
     public GameObject p1wint;
+    public GameObject menu;
     public P2Score p2score;
     public P3Score p3score;
 
@@ -27,18 +28,21 @@ public class Win : MonoBehaviour
         {
             pwin.SetActive(true);
             p1wint.SetActive(true);
+            menu.SetActive(true);
             Time.timeScale = 0;
         }
         if (p2score.player2Score >= 200)
         {
             p2wint.SetActive(true);
             pwin.SetActive(true);
+            menu.SetActive(true);
             Time.timeScale = 0;
         }
         if (p3score.player3Score >= 200)
         {
             p3wint.SetActive(true);
             pwin.SetActive(true);
+            menu.SetActive(true);
             Time.timeScale = 0;
         }
     }

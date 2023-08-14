@@ -12,14 +12,15 @@ public class DecoyTargetShot : MonoBehaviour
     public P3Score p3score;
     public GameObject Player1;
     public TSPD tspd;
+    
     // Start is called before the first frame update
     void Start()
     {
         p1score = GameObject.Find("Player 1").GetComponent<P1Score>();
         p2score = GameObject.Find("Player 2").GetComponent<P2Score>();
-        p3score = GameObject.Find("Player 3").GetComponent<P3Score>();
         p1shoot = GameObject.Find("Player 1").GetComponent<P1Shoot>();
         p2shoot = GameObject.Find("Player 2").GetComponent<P2Shoot>();
+        p3score = GameObject.Find("Player 3").GetComponent<P3Score>();
         p3shoot = GameObject.Find("Player 3").GetComponent<P3Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
         
@@ -44,7 +45,7 @@ public class DecoyTargetShot : MonoBehaviour
                 Destroy(gameObject);
                 p2score.targetsHit = p2score.targetsHit - 1;
             }
-            if (p3shoot.p3isshooting == true && collider.gameObject.name == "Player 3")
+            if (p3shoot.p3isshooting == true && collider.gameObject.name == "Player 3" )
             {
                 Destroy(gameObject);
                 p3score.targetsHit = p3score.targetsHit - 1;

@@ -4,40 +4,35 @@ using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-public class WinP1 : MonoBehaviour
+public class WinP2 : MonoBehaviour
 {
     public P1Score p1score;
     public GameObject pwin;
-    public GameObject plose;
+    public GameObject p2wint;
     public GameObject p1wint;
-    public GameObject p1losst;
+    public P2Score p2score;
     public GameObject menu;
-    public TextMeshProUGUI time;
-    
-    public float timer = 60f;
-
+    public bool players2 = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        players2 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        time.text = ("Time: " + timer.ToString());
-        if (p1score.player1Score >= 200)
+        if (p1score.player1Score >= 150)
         {
             pwin.SetActive(true);
             p1wint.SetActive(true);
             menu.SetActive(true);
             Time.timeScale = 0;
         }
-        if (timer <= 0)
+        if (p2score.player2Score >= 150)
         {
-            plose.SetActive(true);
-            p1losst.SetActive(true);
+            p2wint.SetActive(true);
+            pwin.SetActive(true);
             menu.SetActive(true);
             Time.timeScale = 0;
         }
