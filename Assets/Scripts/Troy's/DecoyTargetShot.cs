@@ -13,6 +13,7 @@ public class DecoyTargetShot : MonoBehaviour
     public GameObject Player1;
     public TSPD tspd;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class DecoyTargetShot : MonoBehaviour
         p3shoot = GameObject.Find("Player 3").GetComponent<P3Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
         
+
     }
 
     // Update is called once per frame
