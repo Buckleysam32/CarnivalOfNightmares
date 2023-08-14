@@ -52,6 +52,7 @@ public class PlayerDeath : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene("PP Main Menu");
+        Time.timeScale = 1;
     }
 
     public void RestartGame()
@@ -61,6 +62,11 @@ public class PlayerDeath : MonoBehaviour
     public void RestartGameOneP()
     {
         SceneManager.LoadScene("1 Player");
+    }
+
+    public void RestartGameTwoP()
+    {
+        SceneManager.LoadScene("2 Player"); 
     }
 
 }

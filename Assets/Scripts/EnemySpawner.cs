@@ -25,16 +25,17 @@ public class EnemySpawner : MonoBehaviour
     {
         while (canSpawn)
         {
-            if(minSpawnRate > 0.2f)
-            {
+
                 float spawnRate = Random.Range(minSpawnRate, maxSpawnRate);
                 yield return new WaitForSeconds(spawnRate);
 
                 Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+            if(minSpawnRate > 0.2f)
+            {
                 minSpawnRate -= spawnRateIncreaseAmount;
                 maxSpawnRate -= spawnRateIncreaseAmount;
             }
-
 
         }
     }
