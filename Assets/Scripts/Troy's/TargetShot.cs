@@ -12,6 +12,7 @@ public class TargetShot : MonoBehaviour
     public P3Score p3score;
     public GameObject Player1;
     public AudioSource targetnoise;
+    public Animator targetAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class TargetShot : MonoBehaviour
         p3shoot = GameObject.Find("Player 3").GetComponent<P3Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
         targetnoise = GetComponent<AudioSource>();
+        targetAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,20 +40,29 @@ public class TargetShot : MonoBehaviour
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
                 targetnoise.Play();
-                Destroy(gameObject);
+                targetAnim.SetBool("IsShot", true);
                 p1score.targetsHit = p1score.targetsHit + 1;
+                Destroy(gameObject, 5);
+                Destroy(this);
+
             }
             if (p2shoot.p2isshooting == true && collider.gameObject.name == "Player 2")
             {
                 targetnoise.Play();
-                Destroy(gameObject);
+                targetAnim.SetBool("IsShot", true);
                 p2score.targetsHit = p2score.targetsHit + 1;
+                Destroy(gameObject, 5);
+                Destroy(this);
+
             }
             if (p3shoot.p3isshooting == true && collider.gameObject.name == "Player 3")
             {
                 targetnoise.Play();
-                Destroy(gameObject);
+                targetAnim.SetBool("IsShot", true);
                 p3score.targetsHit = p3score.targetsHit + 1;
+                Destroy(gameObject, 5);
+                Destroy(this);
+
             }
         }
 

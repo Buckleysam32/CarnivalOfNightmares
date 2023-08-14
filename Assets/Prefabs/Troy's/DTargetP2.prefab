@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7116265227904721563}
   - component: {fileID: -2138510423671297973}
   - component: {fileID: 3888287216656424629}
+  - component: {fileID: -7994348090197731113}
   m_Layer: 0
   m_Name: DTargetP2
   m_TagString: Untagged
@@ -153,3 +154,25 @@ MonoBehaviour:
   p2score: {fileID: 0}
   Player1: {fileID: 0}
   tspd: {fileID: 0}
+  targetAnim: {fileID: 0}
+--- !u!95 &-7994348090197731113
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467851696757123851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed3763afc2d68e349ba64626c01bcb0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

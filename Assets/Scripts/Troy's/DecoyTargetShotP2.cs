@@ -10,7 +10,7 @@ public class DecoyTargetShotP2 : MonoBehaviour
     public P2Score p2score;
     public GameObject Player1;
     public TSPD tspd;
-    
+    public Animator targetAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class DecoyTargetShotP2 : MonoBehaviour
         p1shoot = GameObject.Find("Player 1").GetComponent<P1Shoot>();
         p2shoot = GameObject.Find("Player 2").GetComponent<P2Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
-        
+        targetAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,13 +33,17 @@ public class DecoyTargetShotP2 : MonoBehaviour
         {
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
-                Destroy(gameObject);
+                targetAnim.SetBool("IsShot", true);
                 p1score.targetsHit = p1score.targetsHit - 1;
+                Destroy(gameObject, 5);
+                Destroy(this);
             }
             if (p2shoot.p2isshooting == true && collider.gameObject.name == "Player 2")
             {
-                Destroy(gameObject);
+                targetAnim.SetBool("IsShot", true);
                 p2score.targetsHit = p2score.targetsHit - 1;
+                Destroy(gameObject, 5);
+                Destroy(this);
             }
         }
 
