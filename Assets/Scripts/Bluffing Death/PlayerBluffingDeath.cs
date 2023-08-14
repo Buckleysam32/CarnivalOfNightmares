@@ -35,7 +35,11 @@ public class PlayerBluffingDeath : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3);
+        
         SpriteRenderer.sprite = wait;
+        yield return new WaitForSeconds(3);
+
+        SpriteRenderer.sprite = RockIcon;
     }
 
     // Update is called once per frame
