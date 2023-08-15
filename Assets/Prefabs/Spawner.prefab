@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3710962086958562741
 MonoBehaviour:
@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3f93570dd036a40ac6cc699042af8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnRate: 0.5
+  minSpawnRate: 1
   maxSpawnRate: 2
-  spawnRateIncreaseTime: 5
-  spawnRateIncreaseAmount: 0.01
+  spawnRateIncreaseTime: 1
+  spawnRateIncreaseAmount: 0.02
   enemyPrefab: {fileID: 2149008319535513375, guid: 4cad3b97015fe5c4a986ae8d7e633c44, type: 3}
   canSpawn: 1

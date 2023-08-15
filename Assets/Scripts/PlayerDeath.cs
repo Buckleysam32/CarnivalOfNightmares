@@ -11,6 +11,9 @@ public class PlayerDeath : MonoBehaviour
 
     public TextMeshProUGUI winnerDisplay;
 
+    public AudioSource bgMusic;
+
+    public AudioSource endMusic;
 
     private void Start()
     {
@@ -44,6 +47,8 @@ public class PlayerDeath : MonoBehaviour
 
     private void PlayerDied()
     {
+        bgMusic.Stop();
+        endMusic.Play();
         Debug.Log("Player has died.");
         gameOverPrefab.SetActive(true);
         Time.timeScale = 0;

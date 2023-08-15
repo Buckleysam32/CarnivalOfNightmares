@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private float minSpawnRate = 0.5f;
-    [SerializeField] private float maxSpawnRate = 2.0f;
+    public float minSpawnRate = 1f;
+    public float maxSpawnRate = 3.0f;
 
     [SerializeField] private float spawnRateIncreaseTime = 5f;
     [SerializeField] private float spawnRateIncreaseAmount = 0.1f;
@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
                 Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
-            if(minSpawnRate > 0.2f)
+            if(minSpawnRate > 0.4f)
             {
                 minSpawnRate -= spawnRateIncreaseAmount;
                 maxSpawnRate -= spawnRateIncreaseAmount;

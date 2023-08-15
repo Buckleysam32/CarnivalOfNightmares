@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
 
     public float destroyDelay = 1f;
 
+    public AudioSource scream;
+
     private bool isPushing = true;
 
     private Animator enemyAnim;
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
+        scream = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,6 +65,7 @@ public class EnemyController : MonoBehaviour
         {
             rb.gravityScale = 1;
             rb.constraints = RigidbodyConstraints2D.None;
+            scream.Play();
             enemyAnim.SetBool("IsDying", true);
             Invoke(nameof(DestroyObject), destroyDelay);
         }
