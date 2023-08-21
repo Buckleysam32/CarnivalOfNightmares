@@ -29,10 +29,10 @@ public class ClownTargetShotP1 : MonoBehaviour
         {
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
-                p1score.targetsHit = p1score.targetsHit - 10;
                 clownAnim.SetBool("IsShot", true);
-                Destroy(this.gameObject, 2f);
-                clownAnim.Play("clownAnim");
+                p1score.targetsHit = p1score.targetsHit - 10;
+                Destroy(gameObject, 1);
+                Destroy(this);
             }
         }
 
