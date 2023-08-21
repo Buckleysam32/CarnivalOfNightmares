@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+
     public void toMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -19,6 +20,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("ShooterP1");
         Time.timeScale = 1f;
+        
     }
     public void Player2()
     {
