@@ -8,9 +8,8 @@ public class MovementS1 : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    Vector2 movement;
 
-    
+
 
     private void Start()
     {
@@ -20,7 +19,7 @@ public class MovementS1 : MonoBehaviour
 
     private void Update()
     {
-
+        
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector2.right);
