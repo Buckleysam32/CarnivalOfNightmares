@@ -39,6 +39,9 @@ public class MovementS3 : MonoBehaviour
         {
             rb.AddForce(Vector2.up);
         }
-
+        if (rb.velocity.magnitude > 7f)
+        {
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, 7f);
+        }
     }
 }

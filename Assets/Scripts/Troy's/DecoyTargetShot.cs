@@ -13,6 +13,7 @@ public class DecoyTargetShot : MonoBehaviour
     public GameObject Player1;
     public TSPD tspd;
     public Animator targetAnim;
+    public AudioSource decoysound;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class DecoyTargetShot : MonoBehaviour
         p3shoot = GameObject.Find("Player 3").GetComponent<P3Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
         targetAnim = GetComponent<Animator>();
-
+        decoysound= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,6 +40,7 @@ public class DecoyTargetShot : MonoBehaviour
         {
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
+                decoysound.Play();
                 targetAnim.SetBool("IsShot", true);
                 p1score.targetsHit = p1score.targetsHit - 1;
                 Destroy(gameObject, 5);
@@ -46,6 +48,7 @@ public class DecoyTargetShot : MonoBehaviour
             }
             if (p2shoot.p2isshooting == true && collider.gameObject.name == "Player 2")
             {
+                decoysound.Play();
                 targetAnim.SetBool("IsShot", true);
                 p2score.targetsHit = p2score.targetsHit - 1;
                 Destroy(gameObject, 5);
@@ -53,6 +56,7 @@ public class DecoyTargetShot : MonoBehaviour
             }
             if (p3shoot.p3isshooting == true && collider.gameObject.name == "Player 3" )
             {
+                decoysound.Play();
                 targetAnim.SetBool("IsShot", true);
                 p3score.targetsHit = p3score.targetsHit - 1;
                 Destroy(gameObject, 5);

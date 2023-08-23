@@ -74,8 +74,10 @@ public class Clown : MonoBehaviour
     public void Spawn()
     {
         Transform spawnPoint = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
+        Transform spawnPoint2 = clownSpawnPoints[Random.Range(0, clownSpawnPoints.Count)];
         GameObject target1 = Instantiate(clown, spawnPoint.position, spawnPoint.rotation);
-        
+        GameObject target2 = Instantiate(clown, spawnPoint2.position, spawnPoint2.rotation);
+
 
 
     }

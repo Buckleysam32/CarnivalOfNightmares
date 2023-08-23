@@ -39,11 +39,10 @@ public class MovementS1 : MonoBehaviour
             rb.AddForce(Vector2.up);
         }
 
-        Debug.Log(rb.velocity.magnitude);
 
-        if (rb.velocity.magnitude > 2f)
+        if (rb.velocity.magnitude > 7f)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity, 2f);
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, 7f);
         }
     }
 }

@@ -9,6 +9,7 @@ public class ClownTargetShotP1 : MonoBehaviour
     public GameObject Player1;
     public TSPD tspd;
     public Animator clownAnim;
+    public AudioSource clownsound;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class ClownTargetShotP1 : MonoBehaviour
         p1shoot = GameObject.Find("Player 1").GetComponent<P1Shoot>();
         Player1 = GameObject.Find("Player1").GetComponent<GameObject>();
         clownAnim = GetComponent<Animator>();
+        clownsound= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class ClownTargetShotP1 : MonoBehaviour
         {
             if (p1shoot.p1isshooting == true && collider.gameObject.name == "Player 1")
             {
+                clownsound.Play();
                 clownAnim.SetBool("IsShot", true);
                 p1score.targetsHit = p1score.targetsHit - 10;
                 Destroy(gameObject, 1);
